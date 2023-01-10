@@ -14,7 +14,8 @@ public class Main {
         jdbc.saveUser("Petr", "Petrov", (byte) 19);
         jdbc.saveUser("Sidr", "Sidorov", (byte) 20);
         jdbc.saveUser("James", "Bond", (byte) 21);
-        System.out.println(jdbc.getAllUsers());
+        List<User> list = jdbc.getAllUsers();
+        //System.out.println(jdbc.getAllUsers());
         jdbc.cleanUsersTable();
         jdbc.dropUsersTable();
     }
