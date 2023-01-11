@@ -40,7 +40,7 @@ public class Util {
 
 
     }
-    /*public static SessionFactory getSessionFactory() {
+    public static SessionFactory getSessionFactory() {
         Configuration configuration = new Configuration()
                 .setProperty("hibernate.connection.Driver", "com.mysql.cj.jdbc.Driver")
                 .setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/mydb")
@@ -51,5 +51,5 @@ public class Util {
         return configuration.buildSessionFactory(new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties())
                 .build());
-    }*/
+    }
 }
