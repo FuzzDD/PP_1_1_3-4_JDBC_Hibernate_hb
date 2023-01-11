@@ -36,6 +36,7 @@ public class UserDaoHibernateImpl implements UserDao {
             session.beginTransaction();
             session.createSQLQuery("DROP TABLE IF EXISTS users")
                     .executeUpdate();
+            session.getTransaction().commit();
         }
     }
 
@@ -63,8 +64,9 @@ public class UserDaoHibernateImpl implements UserDao {
     public List<User> getAllUsers() {
         try (Session session = factory.openSession()) {
             session.beginTransaction();
-            List<User> products = (List<User>) session.createQuery("from User ").list();
-            return products;
+            List<User> users = (List<User>) session.createQuery("from User ").list();
+            session.getTransaction().commit();
+            return users;
         }
     }
 
